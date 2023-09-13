@@ -1,0 +1,83 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        "geometry": {
+          "coordinates": [
+            110.40909187423921,
+            -6.974118274676002
+          ],
+          "type": "Point"
+        },
+        "properties": {
+          "name": "Point A"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "coordinates": [
+            110.42036689395951,
+            -6.9739377650117405
+          ],
+          "type": "Point"
+        },
+        "properties": {
+          "name": "Point B"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "coordinates": [
+            110.40927372939524,
+            -6.9773674367246485
+          ],
+          "type": "Point"
+        },
+        "properties": {
+          "name": "Point C"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "coordinates": [
+            110.45601258492576,
+            -6.965572495740517
+          ],
+          "type": "Point"
+        },
+        "properties": {
+          "name": "Point D"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "coordinates": [
+            110.41503220596684,
+            -6.955911392411835
+          ],
+          "type": "Point"
+        },
+        "properties": {
+          "name": "Point E"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "coordinates": [
+            110.43985807984973,
+            -6.965971791466075
+          ],
+          "type": "Point"
+        },
+        "properties": {
+          "name": "Point E"
+        }
+      }
+    ]
+  }

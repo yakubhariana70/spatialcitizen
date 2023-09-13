@@ -1,0 +1,17 @@
+{
+  "name": "spatialcitizensemarang",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "cd server && npm install && npm start",
+    "heroku-postbuild": "cd client && npm install && npm run build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@vercel/postgres": "^0.4.1",
+    "dotenv": "^16.3.1"
+  }
+}

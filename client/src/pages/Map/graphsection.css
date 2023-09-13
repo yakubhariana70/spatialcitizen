@@ -1,0 +1,44 @@
+#graph-view {
+  display: flex;
+  flex-direction: column;
+}
+header {
+  position: sticky;
+  top: 0;
+  background-color: white;
+}
+#graph-toggle {
+  width: 100%;
+  /* border: 1px solid limegreen; */
+}
+
+#active-county {
+  color: #29b7a4;
+  padding: 1em 1em;
+  background-color: white;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+  /* border: 1px solid limegreen; */
+}
+#active-county > h1 {
+  margin-bottom: 0;
+}
+
+#graph-container {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.topic-section {
+  height: auto;
+  width: 100%;
+  scroll-margin: 150px;
+  /* border: 1px solid limegreen; */
+}
+
+@media screen and (max-width: 576px) {
+  .topic-section {
+    height: auto;
+    width: 100%;
+    scroll-margin: 120px;
+  }
+}

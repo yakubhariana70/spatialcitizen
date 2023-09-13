@@ -1,0 +1,153 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#map-storytelling header {
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 7.5vh;
+  top: 0;
+}
+
+header nav {
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+#mapbox-storytelling {
+  position: fixed;
+  top: 0;
+  pointer-events: none;
+}
+
+#story-section {
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+.chapter {
+  width: 100vw;
+  height: 100vh;
+  padding: 50px 50px;
+}
+
+.chapter-card {
+  width: 30rem;
+  padding: 1rem;
+}
+
+.card-text{
+  text-align: justify;
+}
+
+@media screen and (max-width: 576px) {
+  #map-storytelling header {
+    background-color: rgba(0, 0, 0, 0);
+    padding: 1em;
+    height: 10vh;
+  }
+
+  header nav {
+    position: relative;
+    border-radius: 1em;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  #story-section {
+    display: flex;
+    align-items: flex-end;
+    height: 100vh;
+    width: 100vw;
+    flex-direction: row;
+    overflow-x: auto;
+  }
+
+  .chapter {
+    display: flex;
+    flex-shrink: 0;
+    height: auto;
+    padding: 1rem;
+    margin-bottom: 2rem;
+  }
+  .chapter-card {
+    bottom: 0;
+    width: 100%;
+    padding: 1rem;
+  }
+  .card-text {
+    font-size: 0.75rem;
+  }
+}
+
+/* || Landscape Phone */
+@media screen and (min-width: 576px) {
+  #story-section {
+    display: flex;
+    align-items: flex-end;
+    height: 100vh;
+    width: 100vw;
+    flex-direction: row;
+    overflow-x: auto;
+  }
+
+  .chapter {
+    display: flex;
+    flex-shrink: 0;
+    height: auto;
+    padding: 1rem;
+  }
+
+  .chapter-card {
+    bottom: 0;
+    width: 100%;
+    padding: 1rem;
+  }
+  .card-text {
+    font-size: 0.75rem;
+  }
+}
+/* || Tablets */
+@media screen and (min-width: 768px) {
+  .card-text {
+    font-size: 0.875rem;
+  }
+}
+/* || Desktops */
+@media screen and (min-width: 992px) {
+  #map-storytelling nav {
+    width: 100%;
+  }
+  #story-section {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .chapter {
+    height: 100vh;
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 0;
+    padding: 3rem;
+  }
+
+  .chapter-card {
+    bottom: 0;
+    width: 30vw;
+  }
+  .card-text {
+    font-size: 0.875rem;
+  }
+}
+/* || Large Desktops */
+@media screen and (min-width: 1200px) {
+}
+
+/* || Larger Desktops */
+@media screen and (min-width: 1400px) {
+}

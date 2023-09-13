@@ -1,0 +1,140 @@
+#hero-image {
+    background-image: url("../../components/image-assets/homeimage.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+#main-content {
+    height: 100vh;
+}
+
+
+@media screen and (max-width:576px) {
+    
+    #hero-image {
+        position: relative;
+        top: 10vh;
+        height: 35vh;
+    }
+
+    nav {
+        position: fixed;
+        background-color: white;
+        top: 0;
+        padding: 0;
+    }
+    #main-content {
+        position: relative;
+        bottom: 2.5vh;
+        height: 30vh;
+    }
+    #hero-title {
+        width: 100%;
+        color: #062746;
+        font-size: 2rem;
+    }
+}
+
+/* || Landscape Phone */
+@media screen and (min-width: 576px) {
+    #hero-image {
+        position: relative;
+        top: 10vh;
+        height: 35vh;
+    }
+    nav {
+        position: fixed;
+        background-color: white;
+        top: 0;
+        padding: 0;
+    }
+    #main-content {
+        position: relative;
+        bottom: 5vh;
+        height: 30vh;
+    }
+    #hero-title {
+        width: 100%;
+        color: #062746;
+        font-size: 3rem;
+    }
+    #hero-text {
+        width: 100%;
+        font-size: 1.5rem;
+    }
+    #homebutton {
+        font-size: 1rem;
+    }
+}
+/* || Tablets */
+@media screen and (min-width: 768px) {
+
+}
+/* || Desktops */
+@media screen and (min-width: 992px) {
+    #hero-image {
+        position: relative;
+        top: 0;
+        height: 100vh;
+    }
+    nav {
+        position: static;
+        background-color: white;
+    }
+    #main-content {
+        position: relative;
+        bottom: 0;
+        height: 100vh;
+    }
+    #hero-title {
+        width: 50vw;
+        margin-left: 10vh;
+        color: #062746;
+        font-size: 3rem;
+    }
+    #hero-text {
+        width: 40vw;
+        font-size: 1rem;
+        margin-left: 10vh;
+    }
+    #homebutton {
+        margin-left: 10vh;
+    }
+}
+/* || Large Desktops */
+@media screen and (min-width: 1200px) {
+    #hero-image {
+        position: relative;
+        top: 0;
+        height: 100vh;
+    }
+    nav {
+        position: static;
+        background-color: white;
+    }
+    #main-content {
+        position: relative;
+        bottom: 0;
+        height: 100vh;
+    }
+
+    #hero-title {
+        width: 700px;
+        margin-left: 10vh;
+        color: #062746;
+        font-size: 4rem;
+    }
+    #hero-text {
+        width: 500px;
+        font-size: 1.2rem;
+        margin-left: 10vh;
+    }
+    #homebutton {
+        margin-left: 10vh;
+    }
+}
+
+/* || Larger Desktops */
+@media screen and (min-width: 1400px) {
+}

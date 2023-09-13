@@ -1,0 +1,164 @@
+.container-about {
+  display: flex;
+  padding: 0 !important;
+  height: 100vh;
+}
+#about-page {
+  height: 100vh;
+  text-decoration: none;
+}
+
+#about-page main {
+  display: flex;
+  height: auto;
+  flex-flow: column wrap;
+  justify-content: flex-start;
+  overflow-y: hidden;
+  background-color: white;
+}
+
+.information-about {
+  text-align: justify;
+}
+.information-about h3 {
+  text-transform: uppercase;
+}
+
+#about-page .header-section {
+  background-color: white;
+  padding: 0;
+}
+#about-page .footer-section {
+  position: fixed;
+  bottom: 0;
+  background-color: white;
+  width: 66.666%;
+}
+
+#about-image {
+  background-image: url("../../assets/image/muhamad-guntur-hOalOOmFijo-unsplash.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.photo-source {
+  position: absolute;
+  font-style: italic;
+  background-color: rgba(255, 255, 255, 0.75);
+  border-color: white;
+  border-radius: 10px;
+  padding: 0.5em 1em;
+  margin: 1em;
+}
+
+@media screen and (max-width: 576px) {
+  .container-about {
+    display: flex;
+    flex-flow: column wrap;
+    padding: 0 !important;
+    height: 100vh;
+  }
+  #about-page {
+    height: 70vh;
+  }
+  #about-page main {
+    padding: 0em 3em 3em 3em;
+    margin-bottom: 40vh;
+  }
+
+  #about-page .footer-section {
+    position: fixed;
+    bottom: 0;
+    background-color: white;
+    width: 100%;
+    z-index: 2;
+  }
+  .information-about h3 {
+    font-size: 1.25em;
+    font-weight: 700;
+  }
+  #about-image {
+    height: 30vh;
+    position: fixed;
+    bottom: 0;
+  }
+  .photo-source {
+    top: 0;
+    left: 0;
+    font-size: 0.5em;
+  }
+}
+
+/* || Landscape Phone */
+@media screen and (min-width: 576px) {
+  .container-about {
+    flex-direction: column;
+  }
+  #about-page {
+    height: 70vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+  #about-image {
+    height: 30vh;
+    position: fixed;
+    bottom: 0;
+  }
+  #about-page .footer-section {
+    position: fixed;
+    bottom: 0;
+    background-color: white;
+    width: 100%;
+    z-index: 2;
+  }
+}
+/* || Tablets */
+@media screen and (min-width: 768px) {
+}
+/* || Desktops */
+@media screen and (min-width: 992px) {
+  .container-about {
+    flex-direction: row;
+  }
+  #about-page {
+    height: 100vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+  #about-page main {
+    padding: 4em;
+  }
+
+  #about-image {
+    height: 100vh;
+    position: fixed;
+    right: 0;
+  }
+  #about-page .footer-section {
+    position: fixed;
+    bottom: 0;
+    background-color: white;
+    width: 66.666%;
+  }
+  .information-about p {
+    font-size: 1em;
+  }
+  .information-about h3 {
+    font-size: 1.5em;
+    font-weight: 700;
+  }
+  .photo-source {
+    font-size: 0.75em;
+    bottom: 0;
+    right: 0;
+  }
+}
+/* || Large Desktops */
+@media screen and (min-width: 1200px) {
+}
+
+/* || Larger Desktops */
+@media screen and (min-width: 1400px) {
+}

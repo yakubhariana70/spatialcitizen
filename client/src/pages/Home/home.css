@@ -1,0 +1,211 @@
+#home-image {
+  background-image: url("../../assets/image/lawang-sewu-muhammad-guntur.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+.home-photo-source {
+  position: absolute;
+  font-style: italic;
+  background-color: rgba(255, 255, 255, 0.75);
+  border-color: white;
+  border-radius: 10px;
+  padding: 0.5em 1em;
+  margin: 1em;
+}
+
+#home-content {
+  height: 100vh;
+}
+
+nav {
+  height: 10vh;
+}
+
+main {
+  display: flex;
+  height: 85vh;
+  flex-flow: column wrap;
+  justify-content: center;
+}
+
+#hero-section {
+  width: 70%;
+  padding-inline: 5em;
+}
+
+p {
+  font-size: 1.25em;
+}
+
+#button-cta > a {
+  margin-right: 1em;
+  padding: 0.5em;
+  border-radius: 0.4em;
+  font-size: 1.15em;
+}
+.footer-section {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}
+
+@media screen and (max-width: 576px) {
+  #home-image {
+    position: relative;
+    top: 10vh;
+    height: 35vh;
+  }
+  .home-photo-source {
+    bottom: 0;
+    right: 0;
+    font-size: 0.5em;
+  }
+  #home-content {
+    height: 65vh;
+  }
+
+  nav {
+    position: fixed;
+    background-color: white;
+    top: 0;
+    padding: 0;
+  }
+
+  main {
+    position: relative;
+    top: 10vh;
+    height: 50vh;
+  }
+
+  #hero-section {
+    width: 100%;
+    padding: 1.5em;
+  }
+  #hero-section > * {
+    margin-bottom: 20px;
+  }
+
+  #button-cta > a {
+    margin-right: 1em;
+    padding: 0.5em;
+    border-radius: 0.4em;
+    font-size: 1em;
+  }
+
+  .footer-section {
+    font-size: 10px;
+  }
+}
+
+/* || Landscape Phone */
+@media screen and (min-width: 576px) {
+  #home-image {
+    position: relative;
+    top: 10vh;
+    height: 35vh;
+  }
+  #home-content {
+    height: 65vh;
+  }
+
+  nav {
+    position: fixed;
+    background-color: white;
+    top: 0;
+    padding: 0;
+  }
+  main {
+    position: relative;
+    top: 10vh;
+    height: 50vh;
+  }
+  #hero-section > h1 {
+    font-size: 2em;
+  }
+
+  #hero-section > p {
+    font-size: 0.875em;
+  }
+}
+/* || Tablets */
+@media screen and (min-width: 768px) {
+  #hero-section {
+    width: 100%;
+  }
+  #hero-section > h1 {
+    font-size: 3em;
+  }
+
+  #hero-section > p {
+    font-size: 1.25em;
+  }
+  .footer-section {
+    font-size: 1.25em;
+  }
+}
+/* || Desktops */
+@media screen and (min-width: 992px) {
+  #home-image {
+    position: relative;
+    top: 0;
+    height: 100vh;
+  }
+  .home-photo-source {
+    bottom: 0;
+    right: 0;
+    font-size: 0.5em;
+  }
+  #home-content {
+    height: 100vh;
+  }
+
+  nav {
+    position: relative;
+    height: 10vh;
+  }
+
+  main {
+    display: flex;
+    height: 85vh;
+    top: 0;
+    flex-flow: column wrap;
+    justify-content: center;
+  }
+  #hero-section {
+    width: 100%;
+  }
+
+  .footer-section {
+    width: 66.666vw;
+    font-size: 1em;
+    padding-inline: 5em;
+  }
+}
+/* || Large Desktops */
+@media screen and (min-width: 1200px) {
+}
+
+/* || Larger Desktops */
+@media screen and (min-width: 1400px) {
+  #hero-section {
+    width: 70%;
+  }
+  #hero-section > h1 {
+    font-size: 3.5em;
+  }
+
+  #hero-section > p {
+    font-size: 1.75em;
+  }
+  #hero-section > * {
+    margin-bottom: 30px;
+  }
+  #button-cta > a {
+    margin-right: 1em;
+    padding: 0.5em;
+    border-radius: 0.4em;
+    font-size: 1.25em;
+  }
+}

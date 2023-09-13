@@ -1,0 +1,114 @@
+.topic-container {
+  display: flex;
+  flex-flow: column nowrap;
+  /* border: 1px solid magenta; */
+}
+
+.two-column {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.three-column {
+  display: flex;
+  flex-flow: row wrap;
+}
+.two-column > * {
+  flex-basis: 50%;
+}
+.three-column > * {
+  flex-basis: 33.3333333333333%;
+}
+
+.topic-item {
+  display: flex;
+  flex-direction: row;
+  padding-left: 2em;
+  justify-content: center;
+  align-items: center;
+  /* border: 1px solid black; */
+}
+
+.topic-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5em;
+  margin: 0.5em;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+.topic-icon:hover{
+    border-color: #29b7a4;
+}
+
+.active {
+  background-color: #29b7a4;
+}
+
+.topic-icon > img {
+  height: 2em;
+  width: 2em;
+}
+.topic-text {
+  padding: 0.5rem;
+  width: 100%;
+  /* border: 1px solid black; */
+
+}
+
+@media screen and (max-width: 576px) {
+  .two-column {
+    display: flex;
+    flex-flow: row wrap;
+  }
+  
+  .three-column {
+    display: flex;
+    flex-flow: row wrap;
+  }
+  .topic-item {
+    display: flex;
+    flex-direction: row;
+    padding-left: 0;
+    font-size: 0.875em;
+    /* border: 1px solid black; */
+  }
+
+}
+
+/* || Landscape Phone */
+@media screen and (min-width: 576px) {
+
+}
+/* || Tablets */
+@media screen and (min-width: 768px) {
+
+}
+/* || Desktops */
+@media screen and (min-width: 992px) {
+  .topic-item {
+    display: flex;
+    flex-direction: row;
+    padding-left: 0;
+    height: auto;
+    font-size: 0.875em;
+    /* border: 1px solid black; */
+  }
+}
+/* || Large Desktops */
+@media screen and (min-width: 1200px) {
+  .topic-item {
+    display: flex;
+    flex-direction: row;
+    padding-left: 0;
+    height: auto;
+    font-size: 1em;
+    /* border: 1px solid black; */
+  }
+}
+
+/* || Larger Desktops */
+@media screen and (min-width: 1400px) {
+}

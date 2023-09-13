@@ -1,0 +1,48 @@
+#mapbox-view {
+  height: 85vh;
+  width: 100%;
+}
+
+.custom-control {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+}
+
+.custom-control > * {
+  margin: 0.5em;
+}
+
+@media screen and (max-width: 576px) {
+  #mapbox-view{
+      height: 35vh;
+      padding: 0;
+  }
+}
+
+/* || Landscape Phone */
+@media screen and (min-width: 576px) {
+  #mapbox-view{
+    height: 35vh;
+    padding: 0;
+}
+}
+/* || Tablets */
+@media screen and (min-width: 768px) {
+
+}
+/* || Desktops */
+@media screen and (min-width: 992px) {
+  #mapbox-view{
+    height: 85vh;
+    padding: 0;
+}
+}
+/* || Large Desktops */
+@media screen and (min-width: 1200px) {
+}
+
+/* || Larger Desktops */
+@media screen and (min-width: 1400px) {
+}

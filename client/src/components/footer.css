@@ -1,0 +1,25 @@
+footer {
+    display: flex;
+    height: 5vh;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 2em;
+    font-size: 0.875em;
+}
+
+strong {
+    color: #29B7A4;
+}
+
+.created-author a {
+    font-weight: 500;
+    text-decoration: none;
+    color: #037FFF;
+}
+@media screen and (max-width: 576px) {
+footer{
+    font-size: 10px;
+    padding-inline: 1em;
+}
+
+  }
