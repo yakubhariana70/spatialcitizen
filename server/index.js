@@ -15,14 +15,12 @@ app.use(cors());
 app.use(express.json());
 app.use(morgan("dev"));
 
+// Serve static files from the React frontend app
+app.use(express.static(path.join(__dirname, '../client/build')))
 // // Cek Server is Running
 // app.use("/", (req, res) => {
 //   res.send("Server is running")
 // })
-
-// Serve static files from the React frontend app
-app.use(express.static(path.join(__dirname, '../client/build')))
-
 // Get Demografi Data
 app.get("/api/demografi-semarang", async (req, res) => {
   try {
@@ -82,3 +80,4 @@ const port = process.env.PORT || 4001;
 app.listen(port, () => {
   console.log(`server is up and listening from port ${port}`);
 });
+
