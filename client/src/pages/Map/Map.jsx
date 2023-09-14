@@ -93,11 +93,8 @@ const Map = () => {
 
   return (
     <div id="map-page">
-      {isLoading ? (
-        <div className="loading-page">
-          <p>Please wait...</p>
-        </div>
-      ) : (
+      {/* Render Map */}
+      {!isLoading && (
         <Container fluid>
           <Row>
             <Col xs={12} id="header-map">
@@ -134,6 +131,12 @@ const Map = () => {
             </Col>
           </Row>
         </Container>
+      )}
+      {/* Fetch Data Loading */}
+      {isLoading && (
+        <div className="loading-page">
+          <p>Please wait...</p>
+        </div>
       )}
     </div>
   );
