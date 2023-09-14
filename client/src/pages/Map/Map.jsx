@@ -16,6 +16,7 @@ import "./map.css";
 const Map = () => {
   const [demografiData, setDemografiData] = useState(null);
   const [poiData, setPoiData] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
   const [activeLayer, setActiveLayer] = useState("SLTP");
   const [activeCounty, setActiveCounty] = useState("Tembalang");
   const [inTransition, setInTransition] = useState(false);
@@ -33,6 +34,8 @@ const Map = () => {
         const poi_data = poiresponse.data.data.poi[0].json_build_object;
         console.log("poi_data:", poi_data);
         setPoiData(poi_data);
+        //Fetch Data Selesai
+        setIsLoading(false);
         // Membaca nilai initial state activeCounty dari data GeoJSON
         const initialCounty =
           demo_data.features[104].properties["DESA ATAU KELURAHAN"];
@@ -90,42 +93,48 @@ const Map = () => {
 
   return (
     <div id="map-page">
-      <Container fluid>
-        <Row>
-          <Col xs={12} id="header-map">
-            <NavigationBar />
-          </Col>
-        </Row>
-        <Row>
-          <Col xs={12} lg={8} id="mapbox-section">
-            <div>
-              <MapboxSection
-                demografiData={demografiData}
-                poiData={poiData}
-                activeLayer={activeLayer}
-                activeCounty={activeCounty}
-                onChangeCounty={onChangeCounty}
-                inTransition={inTransition}
-              />
-            </div>
-          </Col>
-          <Col xs={12} lg={4} id="graph-section">
-            <div>
-              <GraphSection
-                demografiData={demografiData}
-                activeCounty={activeCounty}
-                activeLayer={activeLayer}
-                onChangeLayer={onChangeLayer}
-              />
-            </div>
-          </Col>
-        </Row>
-        <Row>
-          <Col id="footer-map">
-            <Footer />
-          </Col>
-        </Row>
-      </Container>
+      {isLoading ? (
+        <div className="loading-page">
+          <p>Please wait...</p>
+        </div>
+      ) : (
+        <Container fluid>
+          <Row>
+            <Col xs={12} id="header-map">
+              <NavigationBar />
+            </Col>
+          </Row>
+          <Row>
+            <Col xs={12} lg={8} id="mapbox-section">
+              <div>
+                <MapboxSection
+                  demografiData={demografiData}
+                  poiData={poiData}
+                  activeLayer={activeLayer}
+                  activeCounty={activeCounty}
+                  onChangeCounty={onChangeCounty}
+                  inTransition={inTransition}
+                />
+              </div>
+            </Col>
+            <Col xs={12} lg={4} id="graph-section">
+              <div>
+                <GraphSection
+                  demografiData={demografiData}
+                  activeCounty={activeCounty}
+                  activeLayer={activeLayer}
+                  onChangeLayer={onChangeLayer}
+                />
+              </div>
+            </Col>
+          </Row>
+          <Row>
+            <Col id="footer-map">
+              <Footer />
+            </Col>
+          </Row>
+        </Container>
+      )}
     </div>
   );
 };
