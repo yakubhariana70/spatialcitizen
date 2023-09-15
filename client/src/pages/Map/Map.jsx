@@ -29,11 +29,12 @@ const Map = () => {
         const demo_data = demoresponse.data.data.demografi[0].json_build_object;
         console.log("demo_data:", demo_data);
         setDemografiData(demo_data);
-        const poiresponse = await FetchData.get("/api/poi-semarang");
-        console.log("poiresponse:", poiresponse);
-        const poi_data = poiresponse.data.data.poi[0].json_build_object;
-        console.log("poi_data:", poi_data);
-        setPoiData(poi_data);
+        // const poiresponse = await FetchData.get("/api/poi-semarang");
+        // console.log("poiresponse:", poiresponse);
+        // const poi_data = poiresponse.data.data.poi[0].json_build_object;
+        // console.log("poi_data:", poi_data);
+        // setPoiData(poi_data);
+        setPoiData(null)
         //Fetch Data Selesai
         setIsLoading(false);
         // Membaca nilai initial state activeCounty dari data GeoJSON
