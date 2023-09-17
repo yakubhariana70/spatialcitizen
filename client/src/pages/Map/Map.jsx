@@ -29,7 +29,7 @@ const Map = () => {
         const demo_data = demoresponse.data.data.demografi[0].json_build_object;
         console.log("demo_data:", demo_data);
         setDemografiData(demo_data);
-        const poiresponse = await FetchData.get("/api/poi-semarang");
+        const poiresponse = await FetchData.get("/api/poi-fasil");
         console.log("poiresponse:", poiresponse);
         const poi_data = poiresponse.data.data.poi[0].json_build_object;
         console.log("poi_data:", poi_data);
