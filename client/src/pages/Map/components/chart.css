@@ -1,17 +1,12 @@
 .rank-chart-body {
   display: flex;
-  flex-grow: 1;
-  width: 100%;
   justify-content: center;
-  padding: 1rem;
-  margin-top: auto;
   border: 1px solid turquoise;
   border-radius: 15px;
 }
 
 @media screen and (max-width: 576px) {
   .rank-chart-body {
-    width: 92.5%;
     padding: 1rem;
     margin: 0.5em;
   }
@@ -20,21 +15,20 @@
 /* || Landscape Phone */
 @media screen and (min-width: 576px) {
   .rank-chart-body {
-    width: 92.5%;
     padding: 1rem;
     margin: 0.5em;
   }
 }
 /* || Tablets */
 @media screen and (min-width: 768px) {
+  .rank-chart-body {
+    padding: 1rem;
+    margin: 2em;
+  }
 }
 /* || Desktops */
 @media screen and (min-width: 992px) {
-  .rank-chart-body {
-    width: 90%;
-    padding: 1rem;
-    margin: 1em;
-  }
+
 }
 /* || Large Desktops */
 @media screen and (min-width: 1200px) {

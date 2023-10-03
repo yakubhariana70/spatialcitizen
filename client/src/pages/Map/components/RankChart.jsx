@@ -24,15 +24,15 @@ ChartJS.register(
 //.. import komponen dari library
 // Setting options Chart
 export const optionsRankChart = {
-    scales: {
-        x: {
-            display: false
-        }, 
-        y: {
-            beginAtZero: true
-        }
+  scales: {
+    x: {
+      display: false,
     },
-    responsive: true,
+    y: {
+      beginAtZero: true,
+    },
+  },
+  responsive: true,
 };
 
 const RankChart = ({ demografiData, selectedItem, activeCounty }) => {
@@ -78,9 +78,13 @@ const RankChart = ({ demografiData, selectedItem, activeCounty }) => {
   const onClickEvent = (event) => console.log(event);
 
   return (
-    <div className="rank-chart-body">
-      <Bar data={rankData} options={optionsRankChart} onClick={onClickEvent} />
-    </div>
+      <div className="rank-chart-body">
+        <Bar
+          data={rankData}
+          options={optionsRankChart}
+          onClick={onClickEvent}
+        />
+      </div>
   );
 };
 

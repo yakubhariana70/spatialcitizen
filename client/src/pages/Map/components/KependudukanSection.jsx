@@ -244,12 +244,12 @@ const KependudukanSection = ({
             activeLayer={activeLayer}
             onChangeRank={setRankAdministratif}
           />
+        </div>
           <RankChart
             demografiData={demografiData}
             activeCounty={activeCounty}
             selectedItem={rankAdministratif}
           />
-        </div>
       </section>
       <section className="topic-container">
         <div className="two-column">
