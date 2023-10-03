@@ -1,21 +1,23 @@
-import React, { useState } from "react";
 import { ButtonGroup, Button } from "react-bootstrap";
 
 // || STYLE
 import "./graphtoggle.css";
 
-const GraphToggle = ({ scrollToSection }) => {
-  const [activeToggle, setActiveToggle] = useState("Kependudukan");
-
+const GraphToggle = ({ scrollToSection, activeToggle, onChangeToggle }) => {
   const scrollFunction = (toggle, section) => {
-    setActiveToggle(toggle);
+    onChangeToggle(toggle);
     scrollToSection(section);
   };
   return (
     <div>
-      <ButtonGroup className="button-toggle shadow" aria-label="topic-navigation">
+      <ButtonGroup
+        className="button-toggle shadow"
+        aria-label="topic-navigation"
+      >
         <Button
-          variant={activeToggle === "Kependudukan" ? "success" : "outline-success"}
+          variant={
+            activeToggle === "Kependudukan" ? "success" : "outline-success"
+          }
           onClick={() => scrollFunction("Kependudukan", "kependudukan-section")}
         >
           Kependudukan
@@ -27,7 +29,9 @@ const GraphToggle = ({ scrollToSection }) => {
           Geografis
         </Button>
         <Button
-          variant={activeToggle === "Pendidikan" ? "success" : "outline-success"}
+          variant={
+            activeToggle === "Pendidikan" ? "success" : "outline-success"
+          }
           onClick={() => scrollFunction("Pendidikan", "pendidikan-section")}
         >
           Pendidikan

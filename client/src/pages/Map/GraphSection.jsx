@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
 
 // || Navigasi Topik
@@ -33,6 +33,8 @@ const GraphSection = ({
     threshold: 0.5,
   });
 
+  const [activeToggle, setActiveToggle] = useState("Kependudukan");
+
   // Fungsi Ganti Toggle dan Smooth Scrolling
   const handleScrollinView = useCallback(
     (initial) => {
@@ -52,12 +54,16 @@ const GraphSection = ({
   useEffect(() => {
     if (kependudukanVisible) {
       handleScrollinView("JUMLAH PENDUDUK");
+      setActiveToggle("Kependudukan");
     } else if (geografisVisible) {
       handleScrollinView("LUAS WILAYAH (KM2)");
+      setActiveToggle("Geografis");
     } else if (pendidikanVisible) {
       handleScrollinView("TAMAT SD");
+      setActiveToggle("Pendidikan");
     } else if (kesehatanVisible) {
       handleScrollinView("GOLONGAN DARAH A");
+      setActiveToggle("Kesehatan");
     }
   }, [
     kependudukanVisible,
@@ -71,7 +77,11 @@ const GraphSection = ({
     <div id="graph-view">
       <header>
         <div id="graph-toggle">
-          <GraphToggle scrollToSection={scrollToSection} />
+          <GraphToggle
+            scrollToSection={scrollToSection}
+            activeToggle={activeToggle}
+            onChangeToggle={setActiveToggle}
+          />
         </div>
         <div id="active-county">
           <h1>{activeCounty}</h1>

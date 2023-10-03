@@ -46,29 +46,6 @@ const Map = () => {
     };
     fetchAPI();
   }, []);
-  // //Fetch Demografi
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     try {
-  //       // const demo_response = await fetch(demografi);
-  //       // const demo_data = await demo_response.json();
-  //       // console.log(demo_data);
-  //       // setDemografiData(demo_data);
-  //       // const poi_response = await fetch(poi);
-  //       // const poi_data = await poi_response.json();
-  //       // setPoiData(poi_data);
-  //       // console.log("data demografi:", demo_data);
-  //       // console.log("data poi:", poi_data);
-  //       // Membaca nilai initial state activeCounty dari data GeoJSON
-  //       // const initialCounty =
-  //       //   demo_data.features[104].properties["DESA ATAU KELURAHAN"];
-  //       // setActiveCounty(initialCounty);
-  //     } catch (error) {
-  //       console.error("Gagal mengambil data Demografi GeoJSON :", error);
-  //     }
-  //   };
-  //   fetchData();
-  // }, []);
 
   //Fungsi Pergantian Field Layer
   const onChangeLayer = useCallback(

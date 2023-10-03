@@ -1,5 +1,8 @@
 import axios from "axios";
 
+
 export default axios.create({
-  baseURL: "https://spatialcitizen-server.vercel.app"
-});
+  baseURL: `${process.env.REACT_APP_BASE_URL}`
+})
+console.log(process.env.REACT_APP_NODE_ENV);
+console.log(process.env.REACT_APP_BASE_URL);
