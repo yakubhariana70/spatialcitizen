@@ -16,15 +16,12 @@
 @media screen and (min-width: 576px) {
   .rank-chart-body {
     padding: 1rem;
-    margin: 0.5em;
+    margin: 1em;
   }
 }
 /* || Tablets */
 @media screen and (min-width: 768px) {
-  .rank-chart-body {
-    padding: 1rem;
-    margin: 2em;
-  }
+
 }
 /* || Desktops */
 @media screen and (min-width: 992px) {
