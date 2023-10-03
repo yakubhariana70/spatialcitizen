@@ -19,14 +19,18 @@
 
 @media screen and (max-width: 576px) {
   .rank-chart-body {
-    
+    width: 100%;
+    padding: 1rem;
+    margin: 1em;
   }
 }
 
 /* || Landscape Phone */
 @media screen and (min-width: 576px) {
   .rank-chart-body {
-
+    width: 100%;
+    padding: 1rem;
+    margin: 1em;
   }
 }
 /* || Tablets */
