@@ -2,6 +2,7 @@ import React, { useState, useEffect, useCallback, useRef } from "react";
 import Map, {
   Source,
   Layer,
+  Marker,
   Popup,
   FullscreenControl,
   NavigationControl,
@@ -12,6 +13,10 @@ import SpatialAnalyze from "./components/SpatialAnalyze";
 
 // || STYLE
 import "./mapboxsection.css";
+
+// || IMPORT SYMBOL POI
+import symbolpendidikan from "../../assets/icon/MapboxSection/Education.png";
+import symbolkesehatan from "../../assets/icon/MapboxSection/Health.png";
 
 const MapboxSection = (props) => {
   //Akses Mapbox GL JS menggunakan Mapbox Token
@@ -82,7 +87,7 @@ const MapboxSection = (props) => {
 
   // Style halaman Mapbox GL JS dengan initial value style navigasi malam
   const [mapStyle, setMapStyle] = useState(
-    "mapbox://styles/mapbox/navigation-night-v1"
+    "mapbox://styles/mapbox/streets-v12"
   );
 
   //Fungsi mengubah basemap
@@ -147,6 +152,8 @@ const MapboxSection = (props) => {
         ["linear"],
         ["get", props.activeLayer],
         minValue,
+        "#E6F5F2",
+        (minValue + maxValue) / 2,
         "#29B7A4",
         maxValue,
         "#037FFF",
@@ -160,7 +167,7 @@ const MapboxSection = (props) => {
     id: "demografi-hover-2D",
     type: "fill",
     paint: {
-      "fill-color": "white",
+      "fill-color": "#7E43F5",
       "fill-outline-color": "#1e1e1e",
       "fill-opacity": props.inTransition ? 0 : 1,
     },
@@ -175,6 +182,8 @@ const MapboxSection = (props) => {
         ["linear"],
         ["get", props.activeLayer],
         minValue,
+        "#E6F5F2",
+        (minValue + maxValue) / 2,
         "#29B7A4",
         maxValue,
         "#037FFF",
@@ -197,7 +206,7 @@ const MapboxSection = (props) => {
     id: "demografi-hover-3D",
     type: "fill-extrusion",
     paint: {
-      "fill-extrusion-color": "white",
+      "fill-extrusion-color": "#7E43F5",
       "fill-extrusion-height": [
         "interpolate",
         ["linear"],
@@ -209,17 +218,6 @@ const MapboxSection = (props) => {
       ],
       "fill-extrusion-base": 0,
       "fill-extrusion-opacity": props.inTransition ? 0 : 1,
-    },
-  };
-  const pointInPolygonStyle = {
-    id: "point-in-polygon",
-    type: "circle",
-    className: "point",
-    paint: {
-      "circle-color": "red",
-      "circle-radius": 3,
-      "circle-stroke-width": 2,
-      "circle-stroke-color": "black",
     },
   };
 
@@ -273,8 +271,27 @@ const MapboxSection = (props) => {
               type="geojson"
               data={poiInPolygon}
             >
-              <Layer {...pointInPolygonStyle} />
             </Source>
+            {/* Marker */}
+            {poiInPolygon &&
+              poiInPolygon.features.map((feature, index) => (
+                <Marker
+                  key={index}
+                  longitude={feature.geometry.coordinates[0]}
+                  latitude={feature.geometry.coordinates[1]}
+                >
+                  {/* Konten yang ingin Anda tampilkan di marker */}
+                  <div>
+                    <img
+                      src={analizeActive === "Fasilitas Pendidikan" ? symbolpendidikan : symbolkesehatan}
+                      alt="Marker Icon"
+                      width="30px"
+                      height="35px"
+                    />
+                    <p>{feature.properties.NAMA}</p>
+                  </div>
+                </Marker>
+              ))}
           </>
         )}
 
@@ -293,8 +310,27 @@ const MapboxSection = (props) => {
               type="geojson"
               data={poiInPolygon}
             >
-              <Layer {...pointInPolygonStyle} />
             </Source>
+            {/* Marker */}
+            {poiInPolygon &&
+              poiInPolygon.features.map((feature, index) => (
+                <Marker
+                  key={index}
+                  longitude={feature.geometry.coordinates[0]}
+                  latitude={feature.geometry.coordinates[1]}
+                >
+                  {/* Konten yang ingin Anda tampilkan di marker */}
+                  <div>
+                    <img
+                      src={analizeActive === "Fasilitas Pendidikan" ? symbolpendidikan : symbolkesehatan}
+                      alt="Marker Icon"
+                      width="30px"
+                      height="35px"
+                    />
+                    <p>{feature.properties.name}</p>
+                  </div>
+                </Marker>
+              ))}
           </>
         )}
 

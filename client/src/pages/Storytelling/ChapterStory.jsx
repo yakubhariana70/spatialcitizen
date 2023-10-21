@@ -3,6 +3,10 @@ import { Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 const ChapterStory = (props) => {
+  //ChapterDescription
+  const ChapterDescription = ({ description }) => {
+    return <div dangerouslySetInnerHTML={{ __html: description }} />;
+  };
   //Deteksi button pada section
   const [buttonActive, setButtonActive] = useState(false);
 
@@ -15,12 +19,12 @@ const ChapterStory = (props) => {
     <>
       <Card className="chapter-card">
         <Card.Body>
-          <Card.Title> {props.story.title} </Card.Title>
+          <Card.Title className="fw-semibold"> {props.story.title} </Card.Title>
           {/* <Card.Subtitle className="mb-2 text-muted">
             Card Subtitle
           </Card.Subtitle> */}
           <Card.Text className="card-text">
-            {props.story.description}
+            <ChapterDescription description={props.story.description}/>
             <br />
             {buttonActive ? (
               <Link

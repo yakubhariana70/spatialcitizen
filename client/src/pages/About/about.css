@@ -2,6 +2,7 @@
   display: flex;
   padding: 0 !important;
   height: 100vh;
+  scrollbar-width: thin;
 }
 #about-page {
   height: 100vh;
@@ -13,11 +14,23 @@
   height: auto;
   flex-flow: column wrap;
   justify-content: flex-start;
-  overflow-y: hidden;
+  overflow-y: auto;
   background-color: white;
 }
+#about-page::-webkit-scrollbar {
+  width: 5px; /* Lebar scrollbar */
+}
 
-.information-about {
+#about-page::-webkit-scrollbar-thumb {
+  background-color: #29b7a4; /* Warna thumb (bagian yang bisa digeser) */
+  border-radius: 5px;
+}
+
+#about-page::-webkit-scrollbar-track {
+  background-color: white; /* Warna track (bagian latar belakang scrollbar) */
+}
+
+.information-about p {
   text-align: justify;
 }
 .information-about h3 {
@@ -75,12 +88,17 @@
     width: 100%;
     z-index: 2;
   }
+  #about-page main {
+    position: relative;
+    top: 5vh;
+    margin-bottom: 40vh;
+  }
   .information-about h3 {
     font-size: 1.25em;
     font-weight: 700;
   }
   #about-image {
-    height: 30vh;
+    height: 35vh;
     position: fixed;
     bottom: 0;
   }

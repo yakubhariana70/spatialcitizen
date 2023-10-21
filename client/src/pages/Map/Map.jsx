@@ -112,6 +112,8 @@ const Map = () => {
       {/* Fetch Data Loading */}
       {isLoading && (
         <div className="loading-page">
+          <div className="custom-loader"></div>
+          <br />
           <p>Please wait...</p>
         </div>
       )}

@@ -67,6 +67,7 @@ const SpatialAnalyze = ({
           activeCountyPolygon
         );
         onChangePoiInPolygon(pointsInActiveCounty);
+        console.log("Jumlah POI dalam Poligon ",pointsInActiveCounty);
       } else {
         console.error("Data county aktif tidak ditemukan");
       }

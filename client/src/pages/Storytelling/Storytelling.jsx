@@ -3,10 +3,11 @@ import Map, { Layer, Source } from "react-map-gl";
 import { useInView } from "react-intersection-observer";
 import ChapterStory from "./ChapterStory";
 import NavigationBar from "../../components/NavigationBar";
+import FetchData from "../../api/FetchData";
 
 // || DATA
 import story from "../../data/chapter-story.jsx";
-import demografi from "../../data/demografi-semarang.geojson";
+// import demografi from "../../data/demografi-semarang.geojson";
 
 // || STYLE
 import "./storytelling.css";
@@ -32,6 +33,9 @@ const Storytelling = () => {
   // State untuk mendeteksi transisi antar layer
   const [inTransition, setInTransition] = useState(false);
 
+  //Loading Layer API
+  const [isLoading, setIsLoading] = useState(true);
+
   //Referensi terhadap peta
   const mapRef = useRef();
 
@@ -39,10 +43,12 @@ const Storytelling = () => {
   useEffect(() => {
     const fetchDemografi = async () => {
       try {
-        const response = await fetch(demografi);
-        const data = await response.json();
+        const response = await FetchData.get("/api/demografi-semarang");
+        const data = response.data.data.demografi[0].json_build_object;
+        console.log("story_data:", data);
         setDemografiData(data);
-        console.log(data);
+        //Fetch Data Selesai
+        setIsLoading(false);
       } catch (error) {
         console.error("Gagal mengambil data Demografi GeoJSON :", error);
       }
@@ -176,22 +182,24 @@ const Storytelling = () => {
   };
 
   return (
-    <div id="map-storytelling">
-      <header>
-        <nav>
-          <NavigationBar />
-        </nav>
-      </header>
-      <section id="mapbox-storytelling">
-        <Map
-          ref={mapRef}
-          style={{ height: "100vh", width: "100vw" }}
-          initialViewState={viewport}
-          mapStyle={story.style}
-          mapboxAccessToken={story.accessToken}
-        >
-          {viewLayer &&
-            layerStyle === "2D" && (
+    <div>
+      {/* Render Map */}
+      {!isLoading && (
+        <div id="map-storytelling">
+          <header>
+            <nav>
+              <NavigationBar />
+            </nav>
+          </header>
+          <section id="mapbox-storytelling">
+            <Map
+              ref={mapRef}
+              style={{ height: "100vh", width: "100vw" }}
+              initialViewState={viewport}
+              mapStyle={story.style}
+              mapboxAccessToken={story.accessToken}
+            >
+              {viewLayer && layerStyle === "2D" && (
                 <Source id="geojson-data" type="geojson" data={demografiData}>
                   <Layer
                     {...twoDimensionStyle}
@@ -200,8 +208,7 @@ const Storytelling = () => {
                   />
                 </Source>
               )}
-          {viewLayer &&
-            layerStyle === "3D" && (
+              {viewLayer && layerStyle === "3D" && (
                 <Source id="geojson-data" type="geojson" data={demografiData}>
                   <Layer
                     {...threeDimensionStyle}
@@ -210,34 +217,44 @@ const Storytelling = () => {
                   />
                 </Source>
               )}
-        </Map>
-      </section>
-      <div id="story-section">
-        <section className="chapter" ref={sectionOne}>
-          <ChapterStory story={story.chapters[0]} />
-        </section>
-        <section className="chapter" ref={sectionTwo}>
-          <ChapterStory story={story.chapters[1]} />
-        </section>
-        <section className="chapter" ref={sectionThree}>
-          <ChapterStory story={story.chapters[2]} />
-        </section>
-        <section className="chapter" ref={sectionFour}>
-          <ChapterStory story={story.chapters[3]} />
-        </section>
-        <section className="chapter" ref={sectionFive}>
-          <ChapterStory story={story.chapters[4]} />
-        </section>
-        <section className="chapter" ref={sectionSix}>
-          <ChapterStory story={story.chapters[5]} />
-        </section>
-        <section className="chapter" ref={sectionSeven}>
-          <ChapterStory
-            story={story.chapters[6]}
-            buttonText="Go to Demographic Map"
-          />
-        </section>
-      </div>
+            </Map>
+          </section>
+          <div id="story-section">
+            <section className="chapter" ref={sectionOne}>
+              <ChapterStory story={story.chapters[0]} />
+            </section>
+            <section className="chapter" ref={sectionTwo}>
+              <ChapterStory story={story.chapters[1]} />
+            </section>
+            <section className="chapter" ref={sectionThree}>
+              <ChapterStory story={story.chapters[2]} />
+            </section>
+            <section className="chapter" ref={sectionFour}>
+              <ChapterStory story={story.chapters[3]} />
+            </section>
+            <section className="chapter" ref={sectionFive}>
+              <ChapterStory story={story.chapters[4]} />
+            </section>
+            <section className="chapter" ref={sectionSix}>
+              <ChapterStory story={story.chapters[5]} />
+            </section>
+            <section className="chapter" ref={sectionSeven}>
+              <ChapterStory
+                story={story.chapters[6]}
+                buttonText="Go to Demographic Map"
+              />
+            </section>
+          </div>
+        </div>
+      )}
+      {/* Fetch Data Loading */}
+      {isLoading && (
+        <div className="loading-page">
+          <div className="custom-loader"></div>
+          <br />
+          <p>Please wait...</p>
+        </div>
+      )}
     </div>
   );
 };

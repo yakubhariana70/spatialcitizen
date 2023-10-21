@@ -7,6 +7,7 @@
   height: 100%;
   width: 100%;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
@@ -17,23 +18,47 @@
   color: #29b7a4;
 }
 
+.custom-loader {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: 
+    radial-gradient(farthest-side,#29b7a4 94%,#0000) top/8px 8px no-repeat,
+    conic-gradient(#0000 30%,#29b7a4);
+  -webkit-mask: radial-gradient(farthest-side,#0000 calc(100% - 8px),#000 0);
+  animation:s3 1s infinite linear;
+}
+
 #header-map {
   height: 10vh;
 }
 
 #mapbox-section {
   height: 85vh;
-  border-bottom: 1px solid gray;
-  border-top: 1px solid gray;
+  /* border-bottom: 1px solid gray; */
+  /* border-top: 1px solid gray; */
   padding: 0;
 }
 
 #graph-section {
   height: 85vh;
-  border-bottom: 1px solid gray;
-  border-top: 1px solid gray;
+  /* border-bottom: 1px solid gray; */
+  /* border-top: 1px solid gray; */
   padding: 0;
   overflow-y: scroll;
+}
+
+#graph-section::-webkit-scrollbar {
+  width: 5px; /* Lebar scrollbar */
+}
+
+#graph-section::-webkit-scrollbar-thumb {
+  background-color: #29b7a4; /* Warna thumb (bagian yang bisa digeser) */
+  border-radius: 5px; /* Border radius thumb */
+}
+
+#graph-section::-webkit-scrollbar-track {
+  background-color: white; /* Warna track (bagian latar belakang scrollbar) */
 }
 
 #footer {
@@ -46,6 +71,18 @@
   }
   #graph-section {
     height: 50vh;
+  }
+  #graph-section::-webkit-scrollbar {
+    width: 2.5px; /* Lebar scrollbar */
+  }
+  
+  #graph-section::-webkit-scrollbar-thumb {
+    background-color: #29b7a4; /* Warna thumb (bagian yang bisa digeser) */
+    border-radius: 5px; /* Border radius thumb */
+  }
+  
+  #graph-section::-webkit-scrollbar-track {
+    background-color: white; /* Warna track (bagian latar belakang scrollbar) */
   }
 }
 

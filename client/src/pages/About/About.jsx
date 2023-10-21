@@ -21,7 +21,7 @@ const About = () => {
           <Row style={{ margin: "0" }}>
             <main>
               <div className="information-about">
-                <h3> Background SpatialCitizen</h3>
+                <h3> Background Spatial Citizen</h3>
                 <p>
                   Semarang telah menerapkan berbagai program smart city yang
                   salah satunya dituangkan dalam portal Semarang Smart City yang
@@ -48,23 +48,21 @@ const About = () => {
                   <a href="https://www.darkhorseanalytics.com/blog/3d-map-this-is-edmonton">
                     This is Edmonton
                   </a>
-                  , dikembangkan halaman serupa SpatialCitizen Semarang untuk
+                  , dikembangkan halaman serupa Spatial Citizen Semarang untuk
                   menyajikan data demografi Kota Semarang dari aspek informasi
                   geografis.
                 </p>
               </div>
               <div className="information-about">
-                <h3>Goals SpatialCitizen</h3>
+                <h3>Goals Spatial Citizen</h3>
                 <p>
-                  Tujuan proyek SpatialCitizen Semarang adalah untuk membuat
-                  sebuah dashboard WebGIS interaktif untuk memvisualisasikan
-                  data demografi Kota Semarang dan melakukan analisis sederhana.
+                  Tujuan proyek Spatial Citizen Semarang adalah memudahkan akses informasi demografi Kota Semarang melalui sebuah WebGIS interaktif. Sehingga diharapkan WebGIS Spatial Citizen dapat membantu masyakat memahami dinamika kependudukan Kota Semarang dengan lebih baik. 
                 </p>
               </div>
               <div className="information-about">
                 <h3>Framework and Library</h3>
                 <p>
-                  SpatialCitizen Semarang dikembangkan dalam environtment
+                  Spatial Citizen Semarang dikembangkan dalam environtment
                   React.js (CRA) menggunakan bahasa pemrograman Javascript.
                   Beberapa library atau npm package yang digunakan yakni: <br />
                 </p>
@@ -80,7 +78,7 @@ const About = () => {
               </div>
               <div className="information-about">
                 <h3>About me</h3>
-                <div style={{fontWeight:"600"}}> <a href="https://www.linkedin.com/in/yakubhariana/">Yakub Hariana</a></div>
+                <div style={{fontWeight:"600"}}> <a href="https://www.linkedin.com/in/yakubhariana/" style={{ textDecoration: "none" }}>Yakub Hariana</a></div>
                 <div style={{fontStyle:"italic"}}>Geodetic Engineer</div>
                 <div style={{fontStyle:"italic"}}>Diponegoro University</div>
               </div>
