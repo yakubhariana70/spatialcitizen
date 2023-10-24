@@ -5,7 +5,9 @@ import { Link } from "react-router-dom";
 const ChapterStory = (props) => {
   //ChapterDescription
   const ChapterDescription = ({ description }) => {
-    return <div dangerouslySetInnerHTML={{ __html: description }} />;
+    return (
+      <div dangerouslySetInnerHTML={{ __html: description }} />
+    )
   };
   //Deteksi button pada section
   const [buttonActive, setButtonActive] = useState(false);

@@ -6,6 +6,35 @@
   /* border: 1px solid magenta; */
 }
 
+sub {
+  padding: 1rem 0.5rem;
+  display: flex;
+  justify-content: flex-start;
+  position: relative;
+}
+
+sub .sub-title {
+  padding: 1rem;
+  background-color: white;
+  color: #29b7a4;
+  border-radius: 0.425rem;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+sub .sub-topic {
+  padding: 1rem;
+  background-color: #062746;
+  color: white;
+  border-radius: 0.425rem;
+  font-size: 1rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
 .two-column {
   display: flex;
   flex-flow: row wrap;
@@ -70,6 +99,10 @@
     display: flex;
     flex-flow: row wrap;
   }
+
+  sub {
+    justify-content: center;
+  }
   .topic-item {
     display: flex;
     flex-direction: row;
@@ -94,6 +127,9 @@
     height: auto;
     font-size: 0.875em;
     /* border: 1px solid black; */
+  }
+  sub {
+    justify-content: flex-start;
   }
 }
 /* || Large Desktops */

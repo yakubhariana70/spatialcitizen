@@ -87,7 +87,7 @@ const MapboxSection = (props) => {
 
   // Style halaman Mapbox GL JS dengan initial value style navigasi malam
   const [mapStyle, setMapStyle] = useState(
-    "mapbox://styles/mapbox/streets-v12"
+    "mapbox://styles/mapbox/light-v9"
   );
 
   //Fungsi mengubah basemap

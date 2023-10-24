@@ -57,6 +57,9 @@ const PendidikanSection = ({
   return (
     <div>
       <section className="topic-container">
+      <sub>
+        <div className="sub-topic">Pendidikan</div>
+      </sub>
         <TopicItem
           topicText={"Sekolah Dasar"}
           data={tingkatPendidikan && tingkatPendidikan[0]}

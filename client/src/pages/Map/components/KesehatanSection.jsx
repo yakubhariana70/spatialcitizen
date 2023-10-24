@@ -54,6 +54,9 @@ const KesehatanSection = ({
   return (
     <div>
       <section className="topic-container">
+      <sub>
+        <div className="sub-topic">Kesehatan</div>
+      </sub>
         <div className="two-column">
           <TopicItem
             topicText={"Golongan Darah A"}

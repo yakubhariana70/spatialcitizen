@@ -22,22 +22,6 @@ const ChangeBasemaps = ({ onStyleChange }) => {
       size="sm"
     >
       <Dropdown.Item
-        active={selectedStyle === "mapbox://styles/mapbox/streets-v12"}
-        onClick={() =>
-          handleStyleSelection("mapbox://styles/mapbox/streets-v12")
-        }
-      >
-        Streets
-      </Dropdown.Item>
-      <Dropdown.Item
-        active={selectedStyle === "mapbox://styles/mapbox/satellite-v9"}
-        onClick={() =>
-          handleStyleSelection("mapbox://styles/mapbox/satellite-v9")
-        }
-      >
-        Satellite
-      </Dropdown.Item>
-      <Dropdown.Item
         active={selectedStyle === "mapbox://styles/mapbox/light-v9"}
         onClick={() => handleStyleSelection("mapbox://styles/mapbox/light-v9")}
       >
@@ -64,6 +48,22 @@ const ChangeBasemaps = ({ onStyleChange }) => {
         }
       >
         Dark Navigation
+      </Dropdown.Item>
+      <Dropdown.Item
+        active={selectedStyle === "mapbox://styles/mapbox/streets-v12"}
+        onClick={() =>
+          handleStyleSelection("mapbox://styles/mapbox/streets-v12")
+        }
+      >
+        Streets
+      </Dropdown.Item>
+      <Dropdown.Item
+        active={selectedStyle === "mapbox://styles/mapbox/satellite-v9"}
+        onClick={() =>
+          handleStyleSelection("mapbox://styles/mapbox/satellite-v9")
+        }
+      >
+        Satellite
       </Dropdown.Item>
     </DropdownButton>
   );

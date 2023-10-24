@@ -1,5 +1,5 @@
 var config = {
-    style: 'mapbox://styles/mapbox/navigation-night-v1',
+    style: 'mapbox://styles/mapbox/light-v9',
     accessToken: 'pk.eyJ1IjoieWFrdWJoYXJpYW5hNzAiLCJhIjoiY2xpZXBpOGszMDdxMDNkbXJhdzZiMWhxZCJ9.2rFjAut4puYPoKzc1kPFXA',
     showMarkers: true,
     theme: 'light',
@@ -30,7 +30,7 @@ var config = {
             id: 'second-identifier',
             title: 'Wilayah Kota Semarang',
             image: './path/to/image/source.png',
-            description: 'Kota Semarang terletak di bagian tengah Pulau Jawa sebagai ibukota dari Provinsi Jawa Tengah dengan koordinat geografis <b>6゜54` - 7゜10` LS</b> dan <b>110゜20` - 110゜30` BT</b>. Kota Semarang terbagi dalam <b>16 kecamatan</b> dengan <b>177 kelurahan</b>. Berbatasan langsung dengan Kabupaten Kendal di sebelah barat, Laut Jawa di sebelah utara, Kabupaten Semarang di sebelah selatan, dan Kabupaten Demak di sebelah timur.',
+            description: 'Kota Semarang terletak di bagian tengah Pulau Jawa sebagai ibukota dari Provinsi Jawa Tengah dengan koordinat geografis <b>6&deg; 54` - 7&deg; 10` LS</b> dan <b>110&deg; 20` - 110&deg; 30` BT</b>. Kota Semarang terbagi dalam <b>16 kecamatan</b> dengan <b>177 kelurahan</b>. Berbatasan langsung dengan Kabupaten Kendal di sebelah barat, Laut Jawa di sebelah utara, Kabupaten Semarang di sebelah selatan, dan Kabupaten Demak di sebelah timur.',
             location: {
                 longitude: 110.39,
                 latitude: -7.10,
@@ -50,11 +50,11 @@ var config = {
             description: 'Dengan luas wilayah sekitar 373.70 km<sup>2</sup>, Kota Semarang dihuni oleh <b>± 1.687 juta jiwa</b>. Sehingga, secara rata-rata kepadatan penduduk di Kota Semarang adalah <b>4,817 jiwa/km<sup>2</sup></b>. Pada halaman peta dapat diamati persebaran populasi penduduk di Kota Semarang.',
             location: {
                 longitude: 110.39,
-                latitude: -7.01,
-                pitch: 45,
-                bearing: 45,
-                zoom: 9,
-                duration: 3000
+                latitude: -7.10,
+                pitch: 0,
+                bearing: 0,
+                zoom: 10.15,
+                duration: 5000
             },
             viewLayer: true,
             layerName: "JUMLAH PENDUDUK",
@@ -68,8 +68,8 @@ var config = {
             location: {
                 longitude: 110.39,
                 latitude: -7.01,
-                pitch: 30,
-                bearing: 30,
+                pitch: 85,
+                bearing: -15,
                 zoom: 10,
                 duration: 3000
             },
@@ -100,11 +100,11 @@ var config = {
             image: './path/to/image/source.png',
             description: 'Penduduk Kota Semarang berdasarkan agama dan kepercayaan secara umum menganut agama <b>Islam</b> yaitu sebesar <b>87,27%</b>, dan sisanya terbagi dalam Kristen, Katholik, Hindu, Budha, Konghuchu dan Kepercayaan. Berikut ini distribusi agama Islam di Kota Semarang',
             location: {
-                longitude: 110.4201,
+                longitude: 110.39,
                 latitude: -7.01,
-                pitch:15,
-                bearing: 135,
-                zoom: 9.5,
+                pitch: 85,
+                bearing: -15,
+                zoom: 10,
                 duration: 3000
             },
             viewLayer: true,

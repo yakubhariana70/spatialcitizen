@@ -112,10 +112,10 @@ const Storytelling = () => {
         setInTransition(true);
         setTimeout(() => {
           setLayerOn(chapter.layerName);
-        }, 500);
+        }, 1000);
         setTimeout(() => {
           setInTransition(false);
-        }, 500);
+        }, 1000);
       }
     },
     [viewLayer]
@@ -131,9 +131,10 @@ const Storytelling = () => {
       setLayerStyle("2D");
     } else if (threeVisible) {
       onFlyFunction(story.chapters[2]);
-      setLayerStyle("3D");
+      setLayerStyle("2D-driven");
     } else if (fourVisible) {
       onFlyFunction(story.chapters[3]);
+      setLayerStyle("3D");
     } else if (fiveVisible) {
       onFlyFunction(story.chapters[4]);
     } else if (sixVisible) {
@@ -156,12 +157,30 @@ const Storytelling = () => {
     type: "fill",
     className: "2D-style",
     paint: {
-      "fill-color": "rgba(255, 255, 255, 0.5)",
+      "fill-color": "rgba(6, 39, 70, 0.875)",
       "fill-outline-color": "#FFFFFF",
       "fill-opacity": inTransition ? 0 : 1,
     },
   };
-
+  const twoDimensionDrivenStyle = {
+    type: "fill",
+    className: "2D-driven-style",
+    paint: {
+      "fill-color": [
+        "interpolate",
+        ["linear"],
+        ["get", layerOn],
+        minValue,
+        "#E6F5F2",
+        (minValue + maxValue) / 2,
+        "#29B7A4",
+        maxValue,
+        "#037FFF",
+      ],
+      "fill-outline-color": "#1e1e1e",
+      "fill-opacity": inTransition ? 0 : 1,
+    },
+  };
   const threeDimensionStyle = {
     type: "fill-extrusion",
     className: "3D-style",
@@ -171,11 +190,21 @@ const Storytelling = () => {
         ["linear"],
         ["get", layerOn],
         minValue,
+        "#E6F5F2",
+        (minValue + maxValue) / 2,
         "#29B7A4",
         maxValue,
         "#037FFF",
       ],
-      "fill-extrusion-height": ["get", layerOn],
+      "fill-extrusion-height": [
+        "interpolate",
+        ["linear"],
+        ["get", layerOn],
+        minValue,
+        100,
+        maxValue,
+        5000,
+      ],
       "fill-extrusion-base": 0,
       "fill-extrusion-opacity": inTransition ? 0 : 1,
     },
@@ -203,6 +232,15 @@ const Storytelling = () => {
                 <Source id="geojson-data" type="geojson" data={demografiData}>
                   <Layer
                     {...twoDimensionStyle}
+                    id="demografi-layer"
+                    source="geojson-data"
+                  />
+                </Source>
+              )}
+              {viewLayer && layerStyle === "2D-driven" && (
+                <Source id="geojson-data" type="geojson" data={demografiData}>
+                  <Layer
+                    {...twoDimensionDrivenStyle}
                     id="demografi-layer"
                     source="geojson-data"
                   />

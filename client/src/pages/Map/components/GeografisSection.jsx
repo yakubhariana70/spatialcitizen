@@ -29,11 +29,14 @@ const GeografisSection = ({demografiData, activeCounty, activeLayer, onChangeLay
     }
   }, [demografiData, activeCounty]);
 
-  const [rankGeografis, setRankGeografis] = useState("JUMLAH PENDUDUK");
+  const [rankGeografis, setRankGeografis] = useState("LUAS WILAYAH (KM2)");
 
   return (
     <div>
       <section className="topic-container">
+      <sub>
+        <div className="sub-topic">Geografis</div>
+      </sub>
         <TopicItem
           topicText={"Luas Wilayah"}
           data={luasWilayah && luasWilayah[0]}

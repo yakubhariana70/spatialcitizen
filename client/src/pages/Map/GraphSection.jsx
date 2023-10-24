@@ -21,7 +21,7 @@ const GraphSection = ({
 }) => {
   //Pengaturan Deteksi Section
   const { ref: kependudukanRef, inView: kependudukanVisible } = useInView({
-    threshold: 0.1,
+    threshold: 0.15,
   });
   const { ref: geografisRef, inView: geografisVisible } = useInView({
     threshold: 0.5,
@@ -30,7 +30,7 @@ const GraphSection = ({
     threshold: 0.5,
   });
   const { ref: kesehatanRef, inView: kesehatanVisible } = useInView({
-    threshold: 0.5,
+    threshold: 0.50,
   });
 
   const [activeToggle, setActiveToggle] = useState("Kependudukan");

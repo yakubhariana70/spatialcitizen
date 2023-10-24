@@ -6,6 +6,7 @@ header {
   position: sticky;
   top: 0;
   background-color: white;
+  z-index: 100;
 }
 #graph-toggle {
   width: 100%;
@@ -14,9 +15,10 @@ header {
 
 #active-county {
   color: #29b7a4;
-  padding: 1em 1em;
+  padding: 1em 1.5em;
   background-color: white;
   box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+  text-align: left;
   /* border: 1px solid limegreen; */
 }
 #active-county > h1 {
@@ -31,7 +33,7 @@ header {
 .topic-section {
   height: auto;
   width: 100%;
-  scroll-margin: 150px;
+  scroll-margin: 125px;
   /* border: 1px solid limegreen; */
 }
 
@@ -39,6 +41,9 @@ header {
   .topic-section {
     height: auto;
     width: 100%;
-    scroll-margin: 120px;
+    scroll-margin: 80px;
+  }
+  #active-county {
+    text-align: center;
   }
 }

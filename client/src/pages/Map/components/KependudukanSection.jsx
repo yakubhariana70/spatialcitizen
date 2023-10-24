@@ -183,6 +183,9 @@ const KependudukanSection = ({
   return (
     <div>
       <section className="topic-container">
+        <sub>
+          <div className="sub-topic">Kependudukan</div>
+        </sub>
         <TopicItem
           topicText={"Populasi"}
           data={kependudukanUmum && kependudukanUmum[0]}
@@ -245,13 +248,16 @@ const KependudukanSection = ({
             onChangeRank={setRankAdministratif}
           />
         </div>
-          <RankChart
-            demografiData={demografiData}
-            activeCounty={activeCounty}
-            selectedItem={rankAdministratif}
-          />
+        <RankChart
+          demografiData={demografiData}
+          activeCounty={activeCounty}
+          selectedItem={rankAdministratif}
+        />
       </section>
       <section className="topic-container">
+        <sub>
+          <div className="sub-title">Jenis Kelamin dan Status</div>
+        </sub>
         <div className="two-column">
           <TopicItem
             topicText={"Laki-Laki"}
@@ -323,6 +329,9 @@ const KependudukanSection = ({
         />
       </section>
       <section className="topic-container">
+        <sub>
+          <div className="sub-title">Usia Penduduk</div>
+        </sub>
         <div className="two-column">
           <TopicItem
             topicText={"0-4 Tahun"}
@@ -492,6 +501,9 @@ const KependudukanSection = ({
         />
       </section>
       <section className="topic-container">
+        <sub>
+          <div className="sub-title">Agama dan Kepercayaan</div>
+        </sub>
         <div className="two-column">
           <TopicItem
             topicText={"Islam"}
@@ -561,6 +573,9 @@ const KependudukanSection = ({
         />
       </section>
       <section className="topic-container">
+        <sub>
+          <div className="sub-title">Profesi Penduduk</div>
+        </sub>
         <div className="two-column">
           <TopicItem
             topicText={"Belum/Tidak Bekerja"}
