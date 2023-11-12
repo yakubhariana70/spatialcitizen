@@ -86,9 +86,7 @@ const MapboxSection = (props) => {
   }, [props.demografiData, props.activeLayer]);
 
   // Style halaman Mapbox GL JS dengan initial value style navigasi malam
-  const [mapStyle, setMapStyle] = useState(
-    "mapbox://styles/mapbox/light-v9"
-  );
+  const [mapStyle, setMapStyle] = useState("mapbox://styles/mapbox/light-v9");
 
   //Fungsi mengubah basemap
   const handleStyleChange = (style) => {
@@ -182,18 +180,18 @@ const MapboxSection = (props) => {
         ["linear"],
         ["get", props.activeLayer],
         minValue,
-        "#E6F5F2",
-        (minValue + maxValue) / 2,
-        "#29B7A4",
+        "#A7EEED",
+        // (minValue + maxValue) / 2,
+        // "#3FFEFA",
         maxValue,
-        "#037FFF",
+        "#009B98",
       ],
       "fill-extrusion-height": [
         "interpolate",
         ["linear"],
         ["get", props.activeLayer],
         minValue,
-        100,
+        200,
         maxValue,
         5000,
       ],
@@ -212,12 +210,22 @@ const MapboxSection = (props) => {
         ["linear"],
         ["get", props.activeLayer],
         minValue,
-        100,
+        200,
         maxValue,
         5000,
       ],
       "fill-extrusion-base": 0,
       "fill-extrusion-opacity": props.inTransition ? 0 : 1,
+    },
+  };
+
+  const skyLayer = {
+    id: "sky",
+    type: "sky",
+    paint: {
+      "sky-type": "atmosphere",
+      "sky-atmosphere-sun": [0.0, 0.0],
+      "sky-atmosphere-sun-intensity": 45,
     },
   };
 
@@ -233,27 +241,49 @@ const MapboxSection = (props) => {
         onMouseMove={onHover}
         onClick={onClickCounty}
         maxPitch={60}
+        terrain={{ source: "mapbox-dem", exaggeration: 2.1 }}
+        light={{ anchor: "viewport", color: "white", intensity: 0.4 }}
       >
         {!analizeActive && mapDimension === "3D" && (
-          <Source
-            id="layer-demografi"
-            type="geojson"
-            data={props.demografiData}
-          >
-            <Layer {...threeDimensionStyle} />
-            <Layer {...hover3DStyle} filter={filter} />
-          </Source>
+          <>
+            <Source
+              id="layer-demografi"
+              type="geojson"
+              data={props.demografiData}
+            >
+              <Layer {...threeDimensionStyle} />
+              <Layer {...hover3DStyle} filter={filter} />
+            </Source>
+            <Source
+              id="mapbox-dem"
+              type="raster-dem"
+              url="mapbox://mapbox.mapbox-terrain-dem-v1"
+              tileSize={512}
+              maxzoom={14}
+            />
+            <Layer {...skyLayer} />
+          </>
         )}
 
         {!analizeActive && mapDimension === "2D" && (
-          <Source
-            id="layer-demografi"
-            type="geojson"
-            data={props.demografiData}
-          >
-            <Layer {...twoDimensionStyle} />
-            <Layer {...hover2DStyle} filter={filter} />
-          </Source>
+          <>
+            <Source
+              id="layer-demografi"
+              type="geojson"
+              data={props.demografiData}
+            >
+              <Layer {...twoDimensionStyle} />
+              <Layer {...hover2DStyle} filter={filter} />
+            </Source>
+            <Source
+              id="mapbox-dem"
+              type="raster-dem"
+              url="mapbox://mapbox.mapbox-terrain-dem-v1"
+              tileSize={512}
+              maxzoom={14}
+            />
+            <Layer {...skyLayer} />
+          </>
         )}
 
         {analizeActive && mapDimension === "3D" && (
@@ -270,8 +300,15 @@ const MapboxSection = (props) => {
               id="layer-point-in-polygon"
               type="geojson"
               data={poiInPolygon}
-            >
-            </Source>
+            ></Source>
+            <Source
+              id="mapbox-dem"
+              type="raster-dem"
+              url="mapbox://mapbox.mapbox-terrain-dem-v1"
+              tileSize={512}
+              maxzoom={14}
+            />
+            <Layer {...skyLayer} />
             {/* Marker */}
             {poiInPolygon &&
               poiInPolygon.features.map((feature, index) => (
@@ -283,7 +320,11 @@ const MapboxSection = (props) => {
                   {/* Konten yang ingin Anda tampilkan di marker */}
                   <div>
                     <img
-                      src={analizeActive === "Fasilitas Pendidikan" ? symbolpendidikan : symbolkesehatan}
+                      src={
+                        analizeActive === "Fasilitas Pendidikan"
+                          ? symbolpendidikan
+                          : symbolkesehatan
+                      }
                       alt="Marker Icon"
                       width="30px"
                       height="35px"
@@ -309,8 +350,15 @@ const MapboxSection = (props) => {
               id="layer-point-in-polygon"
               type="geojson"
               data={poiInPolygon}
-            >
-            </Source>
+            ></Source>
+            <Source
+              id="mapbox-dem"
+              type="raster-dem"
+              url="mapbox://mapbox.mapbox-terrain-dem-v1"
+              tileSize={512}
+              maxzoom={14}
+            />
+            <Layer {...skyLayer} />
             {/* Marker */}
             {poiInPolygon &&
               poiInPolygon.features.map((feature, index) => (
@@ -322,7 +370,11 @@ const MapboxSection = (props) => {
                   {/* Konten yang ingin Anda tampilkan di marker */}
                   <div>
                     <img
-                      src={analizeActive === "Fasilitas Pendidikan" ? symbolpendidikan : symbolkesehatan}
+                      src={
+                        analizeActive === "Fasilitas Pendidikan"
+                          ? symbolpendidikan
+                          : symbolkesehatan
+                      }
                       alt="Marker Icon"
                       width="30px"
                       height="35px"

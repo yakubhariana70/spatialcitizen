@@ -4,7 +4,7 @@ import layericon from "../../../assets/icon/MapboxSection/layer.svg";
 
 const ChangeBasemaps = ({ onStyleChange }) => {
   const [selectedStyle, setSelectedStyle] = useState(
-    "mapbox://styles/mapbox/streets-v12"
+    "mapbox://styles/mapbox/light-v9"
   );
 
   const handleStyleSelection = (style) => {
