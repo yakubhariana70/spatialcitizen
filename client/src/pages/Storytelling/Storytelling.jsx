@@ -3,11 +3,11 @@ import Map, { Layer, Source } from "react-map-gl";
 import { useInView } from "react-intersection-observer";
 import ChapterStory from "./ChapterStory";
 import NavigationBar from "../../components/NavigationBar";
-import FetchData from "../../api/FetchData";
+// import FetchData from "../../api/FetchData";
 
 // || DATA
 import story from "../../data/chapter-story.jsx";
-// import demografi from "../../data/demografi-semarang.geojson";
+import demografi from "../../data/demografi-semarang.geojson";
 
 // || STYLE
 import "./storytelling.css";
@@ -43,8 +43,12 @@ const Storytelling = () => {
   useEffect(() => {
     const fetchDemografi = async () => {
       try {
-        const response = await FetchData.get("/api/demografi-semarang");
-        const data = response.data.data.demografi[0].json_build_object;
+        // const response = await FetchData.get("/api/demografi-semarang");
+        // const data = response.data.data.demografi[0].json_build_object;
+
+        const response = await fetch(demografi);
+        const data = await response.json();
+
         console.log("story_data:", data);
         setDemografiData(data);
         //Fetch Data Selesai

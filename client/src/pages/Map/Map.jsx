@@ -4,14 +4,14 @@ import Footer from "../../components/Footer";
 import { Container, Row, Col } from "react-bootstrap";
 import MapboxSection from "./MapboxSection";
 import GraphSection from "./GraphSection";
-import FetchData from "../../api/FetchData";
+// import FetchData from "../../api/FetchData";
 
 // \\ STYLE
 import "./map.css";
 
 // // || DATA
-// import demografi from "../../data/demografi-semarang.geojson";
-// import poi from "../../data/poi-semarang.geojson";
+import demografi from "../../data/demografi-semarang.geojson";
+import poi from "../../data/poi-semarang.geojson";
 
 const Map = () => {
   const [demografiData, setDemografiData] = useState(null);
@@ -25,15 +25,27 @@ const Map = () => {
   useEffect(() => {
     const fetchAPI = async () => {
       try {
-        const demoresponse = await FetchData.get("/api/demografi-semarang");
-        const demo_data = demoresponse.data.data.demografi[0].json_build_object;
+        // API
+        // const demoresponse = await FetchData.get("/api/demografi-semarang");
+        // const demo_data = demoresponse.data.data.demografi[0].json_build_object;
+        // console.log("demo_data:", demo_data);
+        // setDemografiData(demo_data);
+        // const poiresponse = await FetchData.get("/api/poi-fasil");
+        // console.log("poiresponse:", poiresponse);
+        // const poi_data = poiresponse.data.data.poi[0].json_build_object;
+        // console.log("poi_data:", poi_data);
+        // setPoiData(poi_data);
+
+        const demoresponse = await fetch(demografi);
+        const demo_data = await demoresponse.json();
         console.log("demo_data:", demo_data);
         setDemografiData(demo_data);
-        const poiresponse = await FetchData.get("/api/poi-fasil");
+        const poiresponse = await fetch(poi);
         console.log("poiresponse:", poiresponse);
-        const poi_data = poiresponse.data.data.poi[0].json_build_object;
+        const poi_data = await poiresponse.json();
         console.log("poi_data:", poi_data);
         setPoiData(poi_data);
+
         //Fetch Data Selesai
         setIsLoading(false);
         // Membaca nilai initial state activeCounty dari data GeoJSON
