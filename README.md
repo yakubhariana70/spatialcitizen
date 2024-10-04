@@ -9,7 +9,6 @@ Spatial Citizen Semarang adalah proyek WebGIS yang menyediakan informasi demogra
 - **Visualisasi Interaktif 3D**: Menampilkan data demografi dalam bentuk 3D untuk pengalaman pengguna yang lebih menarik.
 - **Storytelling Maps** : Sekilas mengenal Kota Semarang dan kemajemukan masyarakat didalamnya melalui peta animasi.
 - **Informasi Demografi**: Menyediakan data demografi Kota Semarang tahun 2022 dari berbagai sumber seperti MAPID, BPS, Dispendukcapil, Pemkot Semarang, dll.
-- **Akses Publik**: Repository ini terbuka untuk umum dan dapat digunakan untuk latihan atau pengembangan lebih lanjut.
 
 ## Teknologi yang Digunakan
 
