@@ -39,7 +39,7 @@ Spatial Citizen Semarang adalah proyek WebGIS yang menyediakan informasi demogra
 
 ## Penggunaan
 
-Anda dapat menggunakan proyek ini untuk latihan atau pengembangan lebih lanjut. Jika Anda menggunakan proyek ini untuk kepentingan **riset atau tugas akhir**, mohon untuk mencantumkan referensi baik dalam tulisan publikasi atau output WebGIS yang di-deploy.
+Anda dapat menggunakan proyek ini untuk latihan atau pengembangan lebih lanjut. Jika Anda menggunakan proyek ini untuk kepentingan **riset atau tugas akhir**, silahkan refer repository ini atau halaman WebGIS [SpatialCitizen](spatialcitizen-client.vercel.app).
 
 ## Kontribusi
 
